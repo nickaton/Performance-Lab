@@ -1,4 +1,5 @@
 import json
+import sys
 
 def item_generator(json_input, results):
     if isinstance(json_input, dict):
@@ -11,9 +12,10 @@ def item_generator(json_input, results):
             item_generator(item, results)
 
 
-values_txt = input()
-tests_txt = input()
-report_txt = input()
+
+values_txt = sys.argv[1]
+tests_txt = sys.argv[2]
+report_txt = sys.argv[3]
 
 with open(f"{values_txt}", mode="r") as file:
     values = json.load(file)['values']

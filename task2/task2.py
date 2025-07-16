@@ -1,5 +1,7 @@
-path1 = input()
-path2 = input()
+import sys
+
+path1 = sys.argv[1]
+path2 = sys.argv[2]
 
 with open(f'{path1}') as f:
     info = f.readlines()
